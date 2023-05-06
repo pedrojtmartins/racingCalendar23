@@ -6,11 +6,6 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import javax.inject.Inject
 
-
-data class HomeUiState(
-    val a: Int = 0
-)
-
 @HiltViewModel
 class HomeViewModel @Inject constructor() : ViewModel() {
 
