@@ -7,6 +7,6 @@ const val homeScreenRoute = "home"
 
 fun NavGraphBuilder.homeScreen() {
     composable(route = homeScreenRoute) {
-        HomeScreen()
+        HomeScreen(onCardClick = {})
     }
 }

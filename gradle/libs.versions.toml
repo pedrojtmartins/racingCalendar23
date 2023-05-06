@@ -32,7 +32,6 @@ hilt-nav-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", 
 
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 
-
 [plugins]
 
 [bundles]

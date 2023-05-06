@@ -7,7 +7,7 @@ import com.pjtm.racingcalendar23.ui.home.homeScreen
 import com.pjtm.racingcalendar23.ui.home.homeScreenRoute
 
 @Composable
-fun racingCalendarNavigation() {
+fun RacingCalendarNavigation() {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = homeScreenRoute) {
         homeScreen()
