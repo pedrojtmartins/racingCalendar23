@@ -55,7 +55,7 @@ fun HomeScreen(
 fun RaceCard(race: Race, onCardClick: (Int) -> Unit) {
     Card(
         modifier = Modifier.fillMaxWidth(),
-        onClick = { onCardClick(race.id) }
+        onClick = { onCardClick(race.uid) }
     ) {
         Row(
             modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),

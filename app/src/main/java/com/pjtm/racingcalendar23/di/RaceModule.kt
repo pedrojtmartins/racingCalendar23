@@ -12,5 +12,7 @@ import dagger.hilt.components.SingletonComponent
 abstract class RaceModule {
 
     @Binds
-    abstract fun bindsRaceRepository(actual: RaceRepositoryImpl): RaceRepository
+    abstract fun bindsRaceRepository(
+        actual: RaceRepositoryImpl
+    ): RaceRepository
 }

@@ -74,6 +74,13 @@ dependencies {
     implementation(libs.compose.ui.tooling.preview)
     implementation(libs.compose.material3)
 
+    implementation(libs.datastore)
+
+    implementation(libs.room.runtime)
+    implementation(libs.room.ktx)
+    annotationProcessor(libs.room.compiler)
+    kapt(libs.room.compiler)
+
     testImplementation(libs.junit)
 
 //    androidTestImplementation("androidx.test.ext:junit:1.1.5")
