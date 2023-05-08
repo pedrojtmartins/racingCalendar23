@@ -20,8 +20,10 @@ class HomeViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            _uiState.update {
-                it.copy(races = getUpcomingRaces())
+            getUpcomingRaces().collect { races ->
+                _uiState.update {
+                    it.copy(races = races)
+                }
             }
         }
     }

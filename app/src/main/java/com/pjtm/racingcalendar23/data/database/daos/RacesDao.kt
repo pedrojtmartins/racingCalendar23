@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface RacesDao {
-    @Query("SELECT * FROM race")
+    @Query("SELECT * FROM races")
     suspend fun getAll(): Flow<List<RaceDataEntity>>
 
     @Upsert

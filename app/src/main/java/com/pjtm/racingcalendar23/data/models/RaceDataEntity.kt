@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.pjtm.racingcalendar23.domain.entities.Race
 
-@Entity(tableName = "race")
+@Entity(tableName = "races")
 data class RaceDataEntity(
     @PrimaryKey val uid: Int,
     @ColumnInfo(name = "name") val name: String,
