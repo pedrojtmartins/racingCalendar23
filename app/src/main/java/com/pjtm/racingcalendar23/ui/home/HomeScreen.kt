@@ -16,7 +16,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.pjtm.racingcalendar23.domain.entities.Race
+import com.pjtm.racingcalendar23.core.races.domain.entities.Race
 import com.pjtm.racingcalendar23.ui.theme.RacingCalendar23Theme
 
 @Composable
@@ -55,7 +55,7 @@ fun HomeScreen(
 fun RaceCard(race: Race, onCardClick: (Int) -> Unit) {
     Card(
         modifier = Modifier.fillMaxWidth(),
-        onClick = { onCardClick(race.uid) }
+        onClick = { onCardClick(race.id) }
     ) {
         Row(
             modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
@@ -65,7 +65,7 @@ fun RaceCard(race: Race, onCardClick: (Int) -> Unit) {
                 text = race.name
             )
             Text(
-                text = race.date
+                text = "${race.dateTime.hour}:${race.dateTime.minute}0"
             )
         }
     }
@@ -77,9 +77,9 @@ fun HomeScreenPreview() {
     HomeScreen(
         uiState = HomeUiState(
             races = listOf(
-                Race(0, "R1", "d1"),
-                Race(1, "R2", "d2"),
-                Race(2, "R3", "d3")
+//                Race(0, 1, "R1", LocalDateTime.now()),
+//                Race(1, 1, "R2", "d2"),
+//                Race(2, 1, "R3", "d3")
             )
         ),
         onCardClick = {}

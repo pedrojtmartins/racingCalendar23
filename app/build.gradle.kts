@@ -3,16 +3,17 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("com.google.dagger.hilt.android")
     kotlin("kapt")
+    id("com.google.gms.google-services")
 }
 
 android {
     namespace = "com.pjtm.racingcalendar23"
-    compileSdk = 33
+    compileSdk = rootProject.extra["compileSdkVersion"] as Int
 
     defaultConfig {
         applicationId = "com.pjtm.racingcalendar23"
-        minSdk = 24
-        targetSdk = 33
+        minSdk = rootProject.extra["minSdkVersion"] as Int
+        targetSdk = rootProject.extra["targetSdkVersion"] as Int
         versionCode = 1
         versionName = "1.0"
 
@@ -34,6 +35,7 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
+        isCoreLibraryDesugaringEnabled = true
     }
     kotlinOptions {
         jvmTarget = "17"
@@ -57,6 +59,12 @@ android {
 
 dependencies {
 
+    implementation(project(":core:cloudStore"))
+    implementation(project(":core:configVersion"))
+    implementation(project(":core:races"))
+
+    coreLibraryDesugaring(libs.desugar.jdk.libs)
+
     implementation(libs.core.ktx)
 
     kapt(libs.hilt.compiler)
@@ -73,13 +81,6 @@ dependencies {
     implementation(libs.compose.ui.graphics)
     implementation(libs.compose.ui.tooling.preview)
     implementation(libs.compose.material3)
-
-    implementation(libs.datastore)
-
-    implementation(libs.room.runtime)
-    implementation(libs.room.ktx)
-    annotationProcessor(libs.room.compiler)
-    kapt(libs.room.compiler)
 
     testImplementation(libs.junit)
 

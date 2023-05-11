@@ -15,4 +15,8 @@ dependencyResolutionManagement {
 
 rootProject.name = "RacingCalendar23"
 include(":app")
- 
+include(":core:database")
+include(":core:races")
+include(":core:configVersion")
+include(":core:cloudStore")
+include(":core:common")
